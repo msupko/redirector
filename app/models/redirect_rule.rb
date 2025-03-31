@@ -78,7 +78,7 @@ class RedirectRule < ActiveRecord::Base
   private
 
   def self.connection_mysql?
-    connection.adapter_name.downcase.include?('mysql')
+    connection.adapter_name.downcase.include?('mysql') or connection.adapter_name.downcase.include?('trilogy')
   end
 
   def self.connection_sqlite?
